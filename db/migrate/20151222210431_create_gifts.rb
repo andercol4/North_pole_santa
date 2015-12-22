@@ -1,7 +1,7 @@
 class CreateGifts < ActiveRecord::Migration
   def change
     create_table :gifts do |t|
-      t.belongs_to :list, index: true, foreign_key: true
+      t.belongs_to :child, index: true, foreign_key: true
       t.integer :rating
       t.string :name
 

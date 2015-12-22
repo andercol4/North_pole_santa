@@ -24,25 +24,14 @@ ActiveRecord::Schema.define(version: 20151222210431) do
   end
 
   create_table "gifts", force: :cascade do |t|
-    t.integer  "list_id"
+    t.integer  "child_id"
     t.integer  "rating"
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "gifts", ["list_id"], name: "index_gifts_on_list_id", using: :btree
+  add_index "gifts", ["child_id"], name: "index_gifts_on_child_id", using: :btree
 
-  create_table "lists", force: :cascade do |t|
-    t.integer  "child_id"
-    t.string   "name"
-    t.integer  "order"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "lists", ["child_id"], name: "index_lists_on_child_id", using: :btree
-
-  add_foreign_key "gifts", "lists"
-  add_foreign_key "lists", "children"
+  add_foreign_key "gifts", "children"
 end
