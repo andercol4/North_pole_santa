@@ -40,6 +40,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'database_cleaner'
   gem 'better_errors'
+  gem 'simplecov'
 end
 
 group :development do
