@@ -8,4 +8,7 @@ class Child < ActiveRecord::Base
   def self.find_nice_children
     where('rating BETWEEN 7 AND 10')
   end
+
+
+
 end
